@@ -28,6 +28,12 @@ class detailsVC: UIViewController {
     }
     
     @IBAction func saveButton(_ sender: Any) {
+        
+        if chosenBook != ""  {
+            getUpdate()
+        }
+        
+        
        let appDelegate = UIApplication.shared.delegate as! AppDelegate
        let context = appDelegate.persistentContainer.viewContext
         
@@ -98,6 +104,54 @@ class detailsVC: UIViewController {
         } catch {
 
         }
+        
+        
+    }
+    
+    func getUpdate() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "BookProperty")
+        
+        fetchRequest.predicate = NSPredicate(format: "bookName = %@", chosenBook)
+        fetchRequest.returnsObjectsAsFaults = false
+        
+        do {
+            let results = try context.fetch(fetchRequest)
+            
+            for result in results as! [NSManagedObject] {
+            context.delete(result)
+            
+            result.setValue(authorName.text, forKey: "authorName")
+            result.setValue(booksName.text, forKey: "bookName")
+            
+            if let willReadPage = Double(willReadPage.text!) {
+                result.setValue(willReadPage, forKey: "willReadPage")
+            }
+            
+            if let readPage = Double(readPage.text!) {
+                result.setValue(readPage, forKey: "readPage")
+            }
+            
+            if let readpage1 = Double(readPage.text!) {
+                if let willReadPage1 = Double(willReadPage.text!) {
+                    let x = (readpage1 * 100.0 ) / (willReadPage1)
+                    let reading = x.rounded()//en yakin tam sayiya yuvarlama icin kullaniliyor.
+                    result.setValue(reading, forKey: "reading")
+                }
+            }
+            }
+            do{
+                 try context.save()
+            } catch {
+                print("hata")
+            }
+            
+        } catch {
+            print("hata")
+        }
+
         
         
     }
