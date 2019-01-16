@@ -107,7 +107,7 @@ class detailsVC: UIViewController {
         
         
     }
-    
+    // update metodu
     func getUpdate() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
@@ -121,6 +121,7 @@ class detailsVC: UIViewController {
             let results = try context.fetch(fetchRequest)
             
             for result in results as! [NSManagedObject] {
+            //once siliyoruz ve ardindan yerine yeni bilgileri yaziyoruz.
             context.delete(result)
             
             result.setValue(authorName.text, forKey: "authorName")
