@@ -1,5 +1,5 @@
 # yourBookList
-## coreData ile yaptigim alistirma uygulamasi.Okudugunuz kitabin yuzde kacini okudugunu gordugunuz ve guncelleme yapabildiginiz basit bir IOS app.
+## CoreData ile yaptigim alistirma uygulamasi. Okudugunuz kitabin yuzde kacini okudugunu gordugunuz ve guncelleme yapabildiginiz basit bir IOS app.
 
 
 
