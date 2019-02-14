@@ -13,9 +13,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     
     @IBOutlet weak var tableView: UITableView!
-    var bookList : [String] = []
-    var reading : [Double] = []
-    var selectedBook = ""
+    
+    var bookData = BookList()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,8 +30,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @objc func getData() {
         
         // table view guncellerken tum verileri kaldirip yeniden yukluyoruz.
-        bookList.removeAll()
-        reading.removeAll()
+        bookData.bookList.removeAll()
+        bookData.reading.removeAll()
         
         
         //context ve AppDelegate e ulasmak icin gerekli kisim
@@ -52,10 +51,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 for result in results as! [NSManagedObject] {
                     
                     if let name = result.value(forKey: "bookName") as? String {
-                        self.bookList.append(name)
+                        bookData.bookList.append(name)
                     }
                     if let reading1 = result.value(forKey: "reading") as? Double {
-                        self.reading.append(reading1)
+                        bookData.reading.append(reading1)
                     }
                     
                     self.tableView.reloadData()
@@ -67,14 +66,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bookList.count
+        return bookData.bookList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         // tek bir hucreyi 2 satir olarak kullanmak icin
         cell.textLabel!.numberOfLines = 2
-        cell.textLabel?.text = "\(bookList[indexPath.row])\(String("\n%\(reading[indexPath.row]) okundu.")) "
+        cell.textLabel?.text = "\(bookData.bookList[indexPath.row])\(String("\n%\(bookData.reading[indexPath.row]) okundu.")) "
         return cell
     }
     
@@ -90,10 +89,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 
                 for result in results as! [NSManagedObject] {
                     if let bookName = result.value(forKey: "bookName") as? String {
-                        if bookName == bookList[indexPath.row] {
+                        if bookName == bookData.bookList[indexPath.row] {
                             context.delete(result)
-                            bookList.remove(at: indexPath.row)
-                            reading.remove(at: indexPath.row)
+                            bookData.bookList.remove(at: indexPath.row)
+                            bookData.reading.remove(at: indexPath.row)
                             
                             self.tableView.reloadData()
                             
@@ -115,17 +114,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetailsVC" {
             let destinationVC = segue.destination as? detailsVC
-            destinationVC?.chosenBook = selectedBook
+            destinationVC?.chosenBook = bookData.selectedBook
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedBook = bookList[indexPath.row]
+        bookData.selectedBook = bookData.bookList[indexPath.row]
         performSegue(withIdentifier: "toDetailsVC", sender: nil)
     }
     
     @IBAction func addButton(_ sender: Any) {
-        selectedBook = ""
+        bookData.selectedBook = ""
         performSegue(withIdentifier: "toDetailsVC", sender: nil)
     }
     
