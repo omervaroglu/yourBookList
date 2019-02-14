@@ -58,16 +58,32 @@
 		171B9D5121E7748100500D6E /* yourBookList */ = {
 			isa = PBXGroup;
 			children = (
+				17706CBE2215995D00948351 /* Models */,
 				171B9D5221E7748100500D6E /* AppDelegate.swift */,
-				171B9D5421E7748100500D6E /* ViewController.swift */,
-				171B9D6721E77D1800500D6E /* detailsVC.swift */,
+				17706CBD2215992F00948351 /* Controllers */,
 				171B9D5621E7748100500D6E /* Main.storyboard */,
 				171B9D5C21E7748300500D6E /* Assets.xcassets */,
 				171B9D5E21E7748300500D6E /* LaunchScreen.storyboard */,
 				171B9D6121E7748300500D6E /* Info.plist */,
-				171B9D5921E7748100500D6E /* yourBookList.xcdatamodeld */,
 			);
 			path = yourBookList;
+			sourceTree = "<group>";
+		};
+		17706CBD2215992F00948351 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				171B9D5421E7748100500D6E /* ViewController.swift */,
+				171B9D6721E77D1800500D6E /* detailsVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		17706CBE2215995D00948351 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				171B9D5921E7748100500D6E /* yourBookList.xcdatamodeld */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -53,7 +53,7 @@ class detailsVC: UIViewController {
         
         if let readpage1 = Double(readPage.text!) {
             if let willReadPage1 = Double(willReadPage.text!) {
-                let x = (readpage1 * 100.0 ) / (willReadPage1)
+                let x = (readpage1 * 100 ) / (willReadPage1)
                 let reading = x.rounded()//en yakin tam sayiya yuvarlama icin kullaniliyor.
                 newBook.setValue(reading, forKey: "reading")
             }
@@ -137,7 +137,7 @@ class detailsVC: UIViewController {
             
             if let readpage1 = Double(readPage.text!) {
                 if let willReadPage1 = Double(willReadPage.text!) {
-                    let x = (readpage1 * 100.0 ) / (willReadPage1)
+                    let x = (readpage1 * 100 ) / (willReadPage1)
                     let reading = x.rounded()//en yakin tam sayiya yuvarlama icin kullaniliyor.
                     result.setValue(reading, forKey: "reading")
                 }
