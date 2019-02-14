@@ -9,7 +9,7 @@
 import Foundation
 
 public struct BookList {
-    
+    //burasi coredata icindeki verileri icine koydugumuz veri tipleri
     var bookList : [String] = []
     var reading : [Double] = []
     var selectedBook = ""

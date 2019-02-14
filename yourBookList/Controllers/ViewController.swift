@@ -14,6 +14,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var tableView: UITableView!
     
+    //burasi modeldeki struct i olusturmaya yariyor. boylelikle ordaki odeli buradan kontrol edebiliyoruz.
     var bookData = BookList()
     
     override func viewDidLoad() {

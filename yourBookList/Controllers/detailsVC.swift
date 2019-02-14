@@ -102,10 +102,9 @@ class detailsVC: UIViewController {
                 }
             }
         } catch {
-
+            print(error)
         }
-        
-        
+
     }
     // update metodu
     func getUpdate() {
