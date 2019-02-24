@@ -39,36 +39,67 @@ class detailsVC: UIViewController {
         
        let newBook = NSEntityDescription.insertNewObject(forEntityName: "BookProperty", into: context)
         
-        newBook.setValue(authorName.text, forKey: "authorName")
-        newBook.setValue(booksName.text, forKey: "bookName")
-        
-        if let willReadPage = Double(willReadPage.text!) {
-            newBook.setValue(willReadPage, forKey: "willReadPage")
-        }
-        
-        if let readPage = Double(readPage.text!) {
-            newBook.setValue(readPage, forKey: "readPage")
-        }
-        
-        
-        if let readpage1 = Double(readPage.text!) {
-            if let willReadPage1 = Double(willReadPage.text!) {
-                let x = (readpage1 * 100 ) / (willReadPage1)
-                let reading = x.rounded()//en yakin tam sayiya yuvarlama icin kullaniliyor.
-                newBook.setValue(reading, forKey: "reading")
+        if booksName.text != "" {
+            if authorName.text != "" {
+                if willReadPage.text != "" {
+                    if readPage.text != ""  {
+                        if let willReadPage = Double(willReadPage.text!) {
+                            if let readPage = Double(readPage.text!) {
+                                newBook.setValue(authorName.text, forKey: "authorName")
+                                newBook.setValue(booksName.text, forKey: "bookName")
+                                newBook.setValue(willReadPage, forKey: "willReadPage")
+                                newBook.setValue(readPage, forKey: "readPage")
+                                do {
+                                   try context.save()
+                                   print("Basarili")
+                                   } catch {
+                                   print(error)
+                                     }
+                                
+                                if let readpage1 = Double(self.readPage.text!) {
+                                    if let willReadPage1 = Double(self.willReadPage.text!) {
+                                        let x = (readpage1 * 100 ) / (willReadPage1)
+                                        let reading = x.rounded()//en yakin tam sayiya yuvarlama icin kullaniliyor.
+                                        newBook.setValue(reading, forKey: "reading")
+                                    }
+                                }
+                                
+                                NotificationCenter.default.post(name: NSNotification.Name("newlist"), object: nil)
+                                self.navigationController?.popViewController(animated: true)
+                            }
+                        }
+                        
+                    } else {
+                        let alert = UIAlertController(title: "ERROR", message: "Please, write which page do you read", preferredStyle: UIAlertController.Style.alert)
+                        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                            NSLog("click the 'OK'")
+                        }))
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                    
+                } else {
+                    let alert = UIAlertController(title: "ERROR", message: "Please, write total page", preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                        NSLog("click the 'OK'")
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+                }
+                
+            } else {
+                let alert = UIAlertController(title: "ERROR", message: "Please, write author name", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                    NSLog("click the 'OK'")
+                }))
+                self.present(alert, animated: true, completion: nil)
             }
+            
+        }else {
+            let alert = UIAlertController(title: "ERROR", message: "Please, write your book name", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                NSLog("click the 'OK'")
+            }))
+            self.present(alert, animated: true, completion: nil)
         }
-        
-        do {
-            try context.save()
-            print("Basarili")
-        } catch {
-            print(error)
-        }
-        
-        NotificationCenter.default.post(name: NSNotification.Name("newlist"), object: nil)
-        self.navigationController?.popViewController(animated: true)
-        
     }
     
     func getProperty () {

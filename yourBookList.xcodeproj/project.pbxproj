@@ -61,11 +61,11 @@
 			isa = PBXGroup;
 			children = (
 				17706CBE2215995D00948351 /* Models */,
-				17706CC12215ADFC00948351 /* Views */,
 				17706CBD2215992F00948351 /* Controllers */,
 				171B9D5C21E7748300500D6E /* Assets.xcassets */,
 				171B9D5221E7748100500D6E /* AppDelegate.swift */,
 				171B9D5E21E7748300500D6E /* LaunchScreen.storyboard */,
+				171B9D5621E7748100500D6E /* Main.storyboard */,
 				171B9D6121E7748300500D6E /* Info.plist */,
 			);
 			path = yourBookList;
@@ -87,14 +87,6 @@
 				17706CBF22159BD400948351 /* BookList.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		17706CC12215ADFC00948351 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				171B9D5621E7748100500D6E /* Main.storyboard */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
