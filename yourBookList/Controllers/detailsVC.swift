@@ -16,6 +16,7 @@ class detailsVC: UIViewController {
     @IBOutlet weak var willReadPage: UITextField!
     @IBOutlet weak var readPage: UITextField!
     
+    var reading: Double = 3
     var chosenBook = ""
     
     override func viewDidLoad() {
@@ -45,27 +46,30 @@ class detailsVC: UIViewController {
                     if readPage.text != ""  {
                         if let willReadPage = Double(willReadPage.text!) {
                             if let readPage = Double(readPage.text!) {
-                                newBook.setValue(authorName.text, forKey: "authorName")
-                                newBook.setValue(booksName.text, forKey: "bookName")
-                                newBook.setValue(willReadPage, forKey: "willReadPage")
-                                newBook.setValue(readPage, forKey: "readPage")
-                                do {
-                                   try context.save()
-                                   print("Basarili")
-                                   } catch {
-                                   print(error)
-                                     }
-                                
                                 if let readpage1 = Double(self.readPage.text!) {
                                     if let willReadPage1 = Double(self.willReadPage.text!) {
                                         let x = (readpage1 * 100 ) / (willReadPage1)
-                                        let reading = x.rounded()//en yakin tam sayiya yuvarlama icin kullaniliyor.
+                                        
+                                        self.reading = x.rounded()//en yakin tam sayiya yuvarlama icin kullaniliyor.
+                                        
                                         newBook.setValue(reading, forKey: "reading")
+                                        
+                                        newBook.setValue(authorName.text, forKey: "authorName")
+                                        newBook.setValue(booksName.text, forKey: "bookName")
+                                        newBook.setValue(willReadPage, forKey: "willReadPage")
+                                        newBook.setValue(readPage, forKey: "readPage")
+                                        
+                                        do {
+                                            try context.save()
+                                            print("Basarili")
+                                        } catch {
+                                            print(error)
+                                        }
+                                        
+                                        NotificationCenter.default.post(name: NSNotification.Name("newlist"), object: nil)
+                                        self.navigationController?.popViewController(animated: true)
                                     }
                                 }
-                                
-                                NotificationCenter.default.post(name: NSNotification.Name("newlist"), object: nil)
-                                self.navigationController?.popViewController(animated: true)
                             }
                         }
                         
@@ -188,3 +192,7 @@ class detailsVC: UIViewController {
     }
     
 }
+
+
+
+// logladigimizda goruluyor butun datalar ama cekerken sikintili dahad sonra bakarsin.

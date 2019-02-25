@@ -21,8 +21,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        
         getData()
+        
+        print(bookData.reading)
     }
     override func viewWillAppear(_ animated: Bool) {
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.getData), name: NSNotification.Name("newlist"), object: nil)
