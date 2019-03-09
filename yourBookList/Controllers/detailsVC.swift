@@ -15,7 +15,6 @@ class detailsVC: UIViewController {
     @IBOutlet weak var authorName: UITextField!
     @IBOutlet weak var willReadPage: UITextField!
     @IBOutlet weak var readPage: UITextField!
-    @IBOutlet weak var ScrollView: UIScrollView!
     
     var reading: Double = 3
     var chosenBook = ""
@@ -26,10 +25,6 @@ class detailsVC: UIViewController {
         if chosenBook != ""  {
             getProperty()
         }
-        
-//        let scroll = UIScrollView()
-////        scroll.contentSize = view.bounds.size
-////        scroll.isScrollEnabled = true
         view.accessibilityScroll(UIAccessibilityScrollDirection.down)
     }
     
@@ -144,7 +139,6 @@ class detailsVC: UIViewController {
         } catch {
             print(error)
         }
-
     }
     // update metodu
     func getUpdate() {
@@ -191,13 +185,6 @@ class detailsVC: UIViewController {
         } catch {
             print("hata")
         }
-
-        
-        
     }
-    
 }
-
-
-
 // logladigimizda goruluyor butun datalar ama cekerken sikintili dahad sonra bakarsin.
