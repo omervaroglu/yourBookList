@@ -16,6 +16,8 @@
 		171B9D6821E77D1800500D6E /* detailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171B9D6721E77D1800500D6E /* detailsVC.swift */; };
 		17706CC022159BD400948351 /* BookList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17706CBF22159BD400948351 /* BookList.swift */; };
 		34DC1D89ED20FCDD7C6DCCDC /* Pods_yourBookList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF21521C2054C8A198E77ED9 /* Pods_yourBookList.framework */; };
+		45395AA4229864AF005757D5 /* CustomCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45395AA3229864AF005757D5 /* CustomCellView.swift */; };
+		45395AA62298664F005757D5 /* CustomCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45395AA52298664F005757D5 /* CustomCellView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		171B9D6721E77D1800500D6E /* detailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailsVC.swift; sourceTree = "<group>"; };
 		17706CBF22159BD400948351 /* BookList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookList.swift; sourceTree = "<group>"; };
 		227D022BD7F8792EDA0FB115 /* Pods-yourBookList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yourBookList.release.xcconfig"; path = "Target Support Files/Pods-yourBookList/Pods-yourBookList.release.xcconfig"; sourceTree = "<group>"; };
+		45395AA3229864AF005757D5 /* CustomCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellView.swift; sourceTree = "<group>"; };
+		45395AA52298664F005757D5 /* CustomCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCellView.xib; sourceTree = "<group>"; };
 		BF21521C2054C8A198E77ED9 /* Pods_yourBookList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_yourBookList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAD1B2458878CCBF2B21CD78 /* Pods-yourBookList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yourBookList.debug.xcconfig"; path = "Target Support Files/Pods-yourBookList/Pods-yourBookList.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +71,7 @@
 		171B9D5121E7748100500D6E /* yourBookList */ = {
 			isa = PBXGroup;
 			children = (
+				45395AA222986212005757D5 /* Custom UI */,
 				17706CBE2215995D00948351 /* Models */,
 				17706CBD2215992F00948351 /* Controllers */,
 				171B9D5C21E7748300500D6E /* Assets.xcassets */,
@@ -102,8 +107,16 @@
 				EAD1B2458878CCBF2B21CD78 /* Pods-yourBookList.debug.xcconfig */,
 				227D022BD7F8792EDA0FB115 /* Pods-yourBookList.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		45395AA222986212005757D5 /* Custom UI */ = {
+			isa = PBXGroup;
+			children = (
+				45395AA3229864AF005757D5 /* CustomCellView.swift */,
+				45395AA52298664F005757D5 /* CustomCellView.xib */,
+			);
+			path = "Custom UI";
 			sourceTree = "<group>";
 		};
 		EB6F58C9443F6F50EDAB759A /* Frameworks */ = {
@@ -174,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				171B9D6021E7748300500D6E /* LaunchScreen.storyboard in Resources */,
+				45395AA62298664F005757D5 /* CustomCellView.xib in Resources */,
 				171B9D5D21E7748300500D6E /* Assets.xcassets in Resources */,
 				171B9D5821E7748100500D6E /* Main.storyboard in Resources */,
 			);
@@ -212,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17706CC022159BD400948351 /* BookList.swift in Sources */,
+				45395AA4229864AF005757D5 /* CustomCellView.swift in Sources */,
 				171B9D5521E7748100500D6E /* ViewController.swift in Sources */,
 				171B9D6821E77D1800500D6E /* detailsVC.swift in Sources */,
 				171B9D5B21E7748100500D6E /* yourBookList.xcdatamodeld in Sources */,

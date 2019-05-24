@@ -26,7 +26,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         print(bookData.reading)
     }
     override func viewWillAppear(_ animated: Bool) {
-        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.getData), name: NSNotification.Name("newlist"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(getData), name: NSNotification.Name("newlist"), object: nil)
     }
     
     @objc func getData() {
@@ -70,12 +70,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return bookData.bookList.count
     }
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        // tek bir hucreyi 2 satir olarak kullanmak icin
-        cell.textLabel!.numberOfLines = 2
-        cell.textLabel?.text = "\(bookData.bookList[indexPath.row])\(String("\n%\(bookData.reading[indexPath.row]) okundu.")) "
+//        let cell = UITableViewCell()
+//        // tek bir hucreyi 2 satir olarak kullanmak icin
+//        cell.textLabel!.numberOfLines = 2
+//        cell.textLabel?.text = "\(bookData.bookList[indexPath.row])\(String("\n%\(bookData.reading[indexPath.row]) okundu.")) "
+//        return cell
+        tableView.register(UINib(nibName: "CustomCellView", bundle: nil), forCellReuseIdentifier: "CustomCellView")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCellView") as! CustomCellView
+        cell.nameLabel.text = bookData.bookList[indexPath.row]
+        cell.percentageLabel.text = String("%\(bookData.reading[indexPath.row])")
         return cell
     }
     
