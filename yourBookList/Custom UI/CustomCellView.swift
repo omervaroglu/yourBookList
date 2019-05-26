@@ -15,11 +15,11 @@ class CustomCellView: UITableViewCell {
     
     override func awakeFromNib() {
        cellView.layer.cornerRadius = 10.0
-       cellView.layer.shadowColor = UIColor.yellow.cgColor
+       cellView.layer.shadowColor = UIColor.black.cgColor
        cellView.layer.shadowOffset = CGSize(width: 0, height: 1)
        cellView.layer.shadowOpacity = 0.2
        cellView.layer.shadowRadius = 5
-       cellView.layer.borderWidth = 1.5
-       cellView.layer.borderColor = UIColor.yellow.cgColor
+       cellView.layer.borderWidth = 2
+       cellView.layer.borderColor = UIColor.orange.cgColor
     }
 }

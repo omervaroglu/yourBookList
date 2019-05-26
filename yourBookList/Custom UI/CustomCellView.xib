@@ -11,24 +11,24 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="108" id="2Sm-vP-slG" customClass="CustomCellView" customModule="yourBookList" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="378" height="108"/>
+        <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="143" id="2Sm-vP-slG" customClass="CustomCellView" customModule="yourBookList" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="405" height="143"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Sm-vP-slG" id="smT-A8-VIr">
-                <rect key="frame" x="0.0" y="0.0" width="378" height="107.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="405" height="142.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ovQ-c7-imU">
-                        <rect key="frame" x="8" y="8" width="362" height="91.5"/>
+                        <rect key="frame" x="4" y="4" width="397" height="134.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yox-bW-Bt3">
-                                <rect key="frame" x="16" y="68.5" width="342" height="19"/>
+                                <rect key="frame" x="16" y="99.5" width="377" height="19"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GeO-o3-RPO">
-                                <rect key="frame" x="16" y="4" width="342" height="23.5"/>
+                                <rect key="frame" x="16" y="4" width="377" height="23.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -37,7 +37,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="yox-bW-Bt3" firstAttribute="trailing" secondItem="GeO-o3-RPO" secondAttribute="trailing" id="2iT-Ew-q5x"/>
-                            <constraint firstAttribute="bottom" secondItem="yox-bW-Bt3" secondAttribute="bottom" constant="4" id="B2R-fJ-iGD"/>
+                            <constraint firstAttribute="bottom" secondItem="yox-bW-Bt3" secondAttribute="bottom" constant="16" id="NSA-hz-JDL"/>
                             <constraint firstAttribute="trailing" secondItem="GeO-o3-RPO" secondAttribute="trailing" constant="4" id="cg7-NV-8Zx"/>
                             <constraint firstItem="yox-bW-Bt3" firstAttribute="leading" secondItem="GeO-o3-RPO" secondAttribute="leading" id="nvn-p3-OyV"/>
                             <constraint firstItem="GeO-o3-RPO" firstAttribute="leading" secondItem="ovQ-c7-imU" secondAttribute="leading" constant="16" id="qZK-GP-fC8"/>
@@ -46,18 +46,18 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="ovQ-c7-imU" firstAttribute="top" secondItem="smT-A8-VIr" secondAttribute="top" constant="8" id="79c-dX-kVQ"/>
-                    <constraint firstAttribute="bottom" secondItem="ovQ-c7-imU" secondAttribute="bottom" constant="8" id="iDq-k1-u6D"/>
-                    <constraint firstItem="ovQ-c7-imU" firstAttribute="leading" secondItem="smT-A8-VIr" secondAttribute="leading" constant="8" id="lWU-x4-aKA"/>
-                    <constraint firstAttribute="trailing" secondItem="ovQ-c7-imU" secondAttribute="trailing" constant="8" id="s8g-bH-zQg"/>
+                    <constraint firstItem="ovQ-c7-imU" firstAttribute="top" secondItem="smT-A8-VIr" secondAttribute="top" constant="4" id="79c-dX-kVQ"/>
+                    <constraint firstAttribute="bottom" secondItem="ovQ-c7-imU" secondAttribute="bottom" constant="4" id="iDq-k1-u6D"/>
+                    <constraint firstItem="ovQ-c7-imU" firstAttribute="leading" secondItem="smT-A8-VIr" secondAttribute="leading" constant="4" id="lWU-x4-aKA"/>
+                    <constraint firstAttribute="trailing" secondItem="ovQ-c7-imU" secondAttribute="trailing" constant="4" id="s8g-bH-zQg"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="cellView" destination="smT-A8-VIr" id="uKS-Yq-MT6"/>
+                <outlet property="cellView" destination="ovQ-c7-imU" id="lqR-zl-w4W"/>
                 <outlet property="nameLabel" destination="GeO-o3-RPO" id="GYJ-jZ-lRn"/>
                 <outlet property="percentageLabel" destination="yox-bW-Bt3" id="RLi-7I-lac"/>
             </connections>
-            <point key="canvasLocation" x="-260.86956521739131" y="145.98214285714286"/>
+            <point key="canvasLocation" x="-338.40579710144931" y="126.89732142857142"/>
         </tableViewCell>
     </objects>
 </document>

@@ -18,6 +18,7 @@
 		34DC1D89ED20FCDD7C6DCCDC /* Pods_yourBookList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF21521C2054C8A198E77ED9 /* Pods_yourBookList.framework */; };
 		45395AA4229864AF005757D5 /* CustomCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45395AA3229864AF005757D5 /* CustomCellView.swift */; };
 		45395AA62298664F005757D5 /* CustomCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45395AA52298664F005757D5 /* CustomCellView.xib */; };
+		45B6E149229AB6D200D8047D /* BookListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B6E148229AB6D200D8047D /* BookListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		227D022BD7F8792EDA0FB115 /* Pods-yourBookList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yourBookList.release.xcconfig"; path = "Target Support Files/Pods-yourBookList/Pods-yourBookList.release.xcconfig"; sourceTree = "<group>"; };
 		45395AA3229864AF005757D5 /* CustomCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellView.swift; sourceTree = "<group>"; };
 		45395AA52298664F005757D5 /* CustomCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCellView.xib; sourceTree = "<group>"; };
+		45B6E148229AB6D200D8047D /* BookListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListTableViewController.swift; sourceTree = "<group>"; };
 		BF21521C2054C8A198E77ED9 /* Pods_yourBookList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_yourBookList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAD1B2458878CCBF2B21CD78 /* Pods-yourBookList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yourBookList.debug.xcconfig"; path = "Target Support Files/Pods-yourBookList/Pods-yourBookList.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,6 +90,7 @@
 			children = (
 				171B9D5421E7748100500D6E /* ViewController.swift */,
 				171B9D6721E77D1800500D6E /* detailsVC.swift */,
+				45B6E148229AB6D200D8047D /* BookListTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				45395AA4229864AF005757D5 /* CustomCellView.swift in Sources */,
 				171B9D5521E7748100500D6E /* ViewController.swift in Sources */,
 				171B9D6821E77D1800500D6E /* detailsVC.swift in Sources */,
+				45B6E149229AB6D200D8047D /* BookListTableViewController.swift in Sources */,
 				171B9D5B21E7748100500D6E /* yourBookList.xcdatamodeld in Sources */,
 				171B9D5321E7748100500D6E /* AppDelegate.swift in Sources */,
 			);

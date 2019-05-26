@@ -71,7 +71,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return bookData.bookList.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 100
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
